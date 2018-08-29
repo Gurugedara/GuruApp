@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:padding="16dp"
-        android:text="@string/register"
+        android:text="@string/student_registration"
         android:textAllCaps="true"
         android:textColor="@color/Crimson"
         android:textSize="24sp"
@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/first_name"
+        android:text="@string/phone_number"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 
@@ -38,7 +38,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/last_name"
+        android:text="@string/nearest_town"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 
@@ -52,7 +52,33 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/user_name"
+        android:text="@string/school"
+        android:textColor="@color/Crimson"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/age"
+        android:textColor="@color/Crimson"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/o_l_index_number"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 
@@ -66,44 +92,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/password_must_be_atleast_8_characters"
+        android:text="@string/a_l_index_number"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/passwd"
-        android:layout_width="348dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/confirm_password"
-        android:textColor="@color/Crimson"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/conpasswd"
-        android:layout_width="348dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:textColor="@color/Crimson"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:inputType="textPersonName" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -118,9 +115,9 @@
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_weight="4.5"
-            android:background="@color/DarkRed"
+            android:background="@color/FireBrick"
             android:padding="16dp"
-            android:text="@string/teachers"
+            android:text="@string/register"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textStyle="bold" />
@@ -136,9 +133,9 @@
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_weight="4.5"
-            android:background="@color/DarkRed"
+            android:background="@color/Red"
             android:padding="16dp"
-            android:text="@string/students"
+            android:text="@string/cancel"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textStyle="bold" />

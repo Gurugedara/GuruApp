@@ -59,6 +59,15 @@
     <string name="last_name">Last Name</string>
     <string name="user_name">User Name</string>
     <string name="email">Email</string>
+    <string name="phone_number">Phone number</string>
+    <string name="student_registration">Student Registration</string>
+    <string name="nearest_town">Nearest Town</string>
+    <string name="age">age</string>
+    <string name="school">School</string>
+    <string name="o_l_index_number">O/L Index Number</string>
+    <string name="a_l_index_number">A/L Index Number</string>
+    <string name="teachers"><![CDATA[Teachers>>>]]></string>
+    <string name="students"><![CDATA[Students>>>]]></string>
 
 
 </resources>

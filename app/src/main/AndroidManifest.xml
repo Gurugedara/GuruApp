@@ -28,7 +28,8 @@
         <activity android:name=".Auth" />
         <activity android:name=".Institutes" />
         <activity android:name=".classes" />
-        <activity android:name=".userRegister"></activity>
+        <activity android:name=".userRegister" />
+        <activity android:name=".StudentRegistration"></activity>
     </application>
 
 </manifest>
