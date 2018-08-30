@@ -29,11 +29,11 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/fname"
+        android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <TextView
         android:layout_width="match_parent"
@@ -43,11 +43,11 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/lname"
+        android:id="@+id/town"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <TextView
         android:layout_width="match_parent"
@@ -57,10 +57,11 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/school"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="phone" />
 
     <TextView
         android:layout_width="match_parent"
@@ -70,10 +71,11 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <TextView
         android:layout_width="match_parent"
@@ -83,11 +85,11 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/uname"
+        android:id="@+id/oLindex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <TextView
         android:layout_width="match_parent"
@@ -97,10 +99,11 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/ALindex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -139,7 +142,6 @@
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <EditText
