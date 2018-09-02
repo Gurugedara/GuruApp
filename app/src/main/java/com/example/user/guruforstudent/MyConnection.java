@@ -13,7 +13,7 @@ public class MyConnection {
         Connection con = null;
         try{
             StrictMode.ThreadPolicy policy = new  StrictMode.ThreadPolicy.Builder()
-                    .permitAll().build();
+                   .permitAll().build();
             StrictMode.setThreadPolicy(policy);
             Class.forName("com.mysql.jdbc.Driver");
             //con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/gurugedara","root","");

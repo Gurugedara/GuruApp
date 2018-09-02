@@ -29,7 +29,9 @@
         <activity android:name=".Institutes" />
         <activity android:name=".classes" />
         <activity android:name=".userRegister" />
-        <activity android:name=".StudentRegistration"></activity>
+        <activity android:name=".StudentRegistration" />
+        <activity android:name=".ChooseInstitue" />
+        <activity android:name=".WaitingReg"></activity>
     </application>
 
 </manifest>

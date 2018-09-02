@@ -114,7 +114,7 @@
         android:weightSum="10">
 
         <Button
-            android:id="@+id/regBtn"
+            android:id="@+id/regTeacher"
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_weight="4.5"
@@ -132,7 +132,7 @@
             android:layout_weight=".5" />
 
         <Button
-            android:id="@+id/cancelBtn"
+            android:id="@+id/regStudent"
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_weight="4.5"

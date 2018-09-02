@@ -20,8 +20,8 @@ import java.sql.Statement;
 public class Login extends AppCompatActivity {
     Connection con = null;
     PreparedStatement ps = null;
-    Button nxtpg2;
-    Button nxtregpg;
+    Button tomain;
+    Button userregpg;
     EditText username;
     EditText passwd;
     TextView tv;
@@ -38,13 +38,13 @@ public class Login extends AppCompatActivity {
         con = MyConnection.getconnection();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        nxtpg2=(Button)findViewById(R.id.login);
-        nxtregpg = (Button)findViewById(R.id.regBtn);
+        tomain=(Button)findViewById(R.id.login);
+        userregpg = (Button)findViewById(R.id.regBtn);
         username =(EditText)findViewById(R.id.txtUname);
         passwd =(EditText)findViewById(R.id.txtPasswd);
 
 
-        nxtpg2.setOnClickListener(new View.OnClickListener() {
+        tomain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String uname = username.getText().toString();
@@ -99,12 +99,12 @@ public class Login extends AppCompatActivity {
 
                 } catch (Exception e) {
                     System.out.print(e);
-                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
 
                 }
             }
         });
-        nxtregpg.setOnClickListener(new View.OnClickListener() {
+        userregpg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openregpg();
