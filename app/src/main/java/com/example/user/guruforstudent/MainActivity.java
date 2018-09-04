@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.user.guruforstudent.Controls.FileRW;
+
 public class MainActivity extends AppCompatActivity {
     Button nxtpg1;
     @Override
@@ -15,8 +17,17 @@ public class MainActivity extends AppCompatActivity {
         nxtpg1=(Button)findViewById(R.id.btnIns);
         nxtpg1.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
-                openLoginpg();
+                FileRW rw = new FileRW();
+                String username= rw.Read();
+                if(username.isEmpty()) {
+                    openLoginpg();
+                }
+                else{
+                    chooseInspg();
+
+                }
             }
         });
 
@@ -24,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openLoginpg() {
         Intent intent = new Intent(this,Login.class);
+        startActivity(intent);
+    }
+    public void chooseInspg() {
+        Intent intent = new Intent(this,ChooseInstitue.class);
         startActivity(intent);
     }
 }

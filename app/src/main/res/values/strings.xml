@@ -77,6 +77,9 @@
     <string name="go"><![CDATA[Go>>>]]></string>
     <string name="choose_your_institute_here">Choose Your Institute Here</string>
     <string name="enter_your_institute_reg_number_here">Enter your Institute reg number here</string>
+    <string name="welcome_institute_name"><![CDATA[Welcome <Institute name>]]></string>
+    <string name="logout">LogOut</string>
+    <string name="next2"><![CDATA[NEXT>>>]]></string>
 
 
 </resources>

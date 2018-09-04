@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
@@ -40,7 +39,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_alignEnd="@+id/toMainpg"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/textView13"
         android:layout_marginTop="21dp"
@@ -60,10 +58,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_gravity="center_horizontal"
-        android:background="?android:attr/floatingToolbarItemBackgroundBorderlessDrawable"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:paddingLeft="48dp"
         android:paddingRight="48dp"
-        android:text="@string/logout"
+        android:text="LogOut"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/DarkRed"
         android:textSize="12sp"
@@ -90,14 +88,14 @@
         android:textColor="@color/Crimson" />
 
     <Button
-        android:id="@+id/toMainpg"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/reg"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:layout_toStartOf="@+id/LogOut"
         android:background="@drawable/background_login_two"
-        android:text="@string/next2"
+        android:text="Go>>"
         android:textColor="@color/GhostWhite" />
 
 

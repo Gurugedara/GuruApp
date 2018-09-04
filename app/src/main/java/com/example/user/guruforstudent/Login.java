@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.user.guruforstudent.Controls.FileRW;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -49,37 +51,9 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 String uname = username.getText().toString();
                 String paswd = passwd.getText().toString();
-               /** int m = u.UserLogin(uname,paswd);
-                if(m==1) {
-                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_LONG).show();
-                    openslctclsspg();
-                }
-                 else if(m==0){
-                    Toast.makeText(getApplicationContext(), "Invalid Data", Toast.LENGTH_LONG).show();
-                }
-                else if(m==2){
-                    Toast.makeText(getApplicationContext(), "Login Fail", Toast.LENGTH_LONG).show();
-                } **/
+
                 try {
-                   /* StrictMode.ThreadPolicy policy = new  StrictMode.ThreadPolicy.Builder().permitAll().build();
 
-                    StrictMode.setThreadPolicy(policy);
-                    Class.forName("com.mysql.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://192.168.8.102:3306/gurugedara","kushan","13579");
-                    System.out.print("Connected......................"); */
-
-
-                    /*String result = "DB conection sucess ";
-                    Statement st = con.createStatement();
-                    ResultSet rs = st.executeQuery("SELECT * FROM usertable");
-                    ResultSetMetaData rsmd = rs.getMetaData();
-                    while (rs.next()){
-                        result +=  rsmd.getColumnName(1) + " : " + rs.getString(1) + "\n";
-                        result +=  rsmd.getColumnName(2) + " : " + rs.getString(2) + "\n";
-                        result +=  rsmd.getColumnName(3) + " : " + rs.getString(3) + "\n";
-                    }
-
-                    Toast.makeText(getApplicationContext(),result, Toast.LENGTH_LONG).show(); */
                     ps = con.prepareStatement("SELECT * FROM `usertable` WHERE username =? AND password =?");
                     ps.setString(1, uname);
                     ps.setString(2, paswd);
@@ -87,6 +61,8 @@ public class Login extends AppCompatActivity {
                     if(rs.next()){
                         System.out.print("Login Sucess");
                         Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_LONG).show();
+                        FileRW rw = new FileRW(uname);
+                        rw.write();
                         openslctclsspg();
 
 
@@ -114,7 +90,7 @@ public class Login extends AppCompatActivity {
 
     }
     public void openslctclsspg() {
-        Intent intent = new Intent(this,Menu.class);
+        Intent intent = new Intent(this,ChooseInstitue.class);
         startActivity(intent);
     }
     public void openregpg() {
