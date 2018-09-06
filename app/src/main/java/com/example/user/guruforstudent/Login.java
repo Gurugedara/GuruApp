@@ -54,14 +54,14 @@ public class Login extends AppCompatActivity {
 
                 try {
 
-                    ps = con.prepareStatement("SELECT * FROM `usertable` WHERE username =? AND password =?");
+                    ps = con.prepareStatement("SELECT * FROM `users` WHERE `email`=? AND `password`=?");
                     ps.setString(1, uname);
                     ps.setString(2, paswd);
                     ResultSet rs = ps.executeQuery();
                     if(rs.next()){
                         System.out.print("Login Sucess");
                         Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_LONG).show();
-                        FileRW rw = new FileRW(uname);
+                        FileRW rw = new FileRW("Entered");
                         rw.write();
                         openslctclsspg();
 

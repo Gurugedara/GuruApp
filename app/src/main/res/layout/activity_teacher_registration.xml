@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:padding="16dp"
-        android:text="@string/student_registration"
+        android:text="@string/teacher_registration"
         android:textAllCaps="true"
         android:textColor="@color/Crimson"
         android:textSize="24sp"
@@ -54,7 +54,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/school"
+        android:text="@string/current_working_school"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 
@@ -68,7 +68,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/age"
+        android:text="@string/educational_qulification"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 
@@ -82,7 +82,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/o_l_index_number_optional"
+        android:text="@string/teaching_subjects"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 
@@ -96,7 +96,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/a_l_index_number_optional"
+        android:text="@string/another_qulifications"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 

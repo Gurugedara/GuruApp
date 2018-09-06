@@ -80,6 +80,11 @@
     <string name="welcome_institute_name"><![CDATA[Welcome <Institute name>]]></string>
     <string name="logout">LogOut</string>
     <string name="next2"><![CDATA[NEXT>>>]]></string>
+    <string name="teacher_registration">Teacher Registration</string>
+    <string name="current_working_school">Current Working School</string>
+    <string name="teaching_subjects">Teaching Subjects</string>
+    <string name="educational_qulification">Educational qulification</string>
+    <string name="another_qulifications">Another Qulifications</string>
 
 
 </resources>

@@ -53,21 +53,6 @@
         android:textColorHint="#fff" />
 
 
-    <Button
-        android:id="@+id/LogOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="center_horizontal"
-        android:background="?android:attr/floatingToolbarItemBackgroundBorderlessDrawable"
-        android:paddingLeft="48dp"
-        android:paddingRight="48dp"
-        android:text="@string/logout"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/DarkRed"
-        android:textSize="12sp"
-        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView12"

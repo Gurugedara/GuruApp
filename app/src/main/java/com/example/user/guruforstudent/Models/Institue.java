@@ -28,7 +28,7 @@ public class Institue {
         List<String> insName = new ArrayList<String>();
 
         // Select All Query
-        String selectQuery = "SELECT `name` FROM `institue`";
+        String selectQuery = "SELECT `name` FROM `institutes`";
 
 
         try {

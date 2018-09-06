@@ -19,15 +19,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
 
             public void onClick(View view) {
-                FileRW rw = new FileRW();
-                String username= rw.Read();
-                if(username.isEmpty()) {
-                    openLoginpg();
-                }
-                else{
-                    chooseInspg();
-
-                }
+               // FileRW rw = new FileRW();
+               // String username= rw.Read();
+               // if(username.isEmpty()) {
+//                    openLoginpg();
+//                }
+//                else{
+//                    chooseInspg();
+//
+//                }
+                openLoginpg();
             }
         });
 

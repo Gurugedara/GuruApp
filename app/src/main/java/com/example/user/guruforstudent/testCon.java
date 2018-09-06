@@ -10,14 +10,14 @@ import java.io.IOException;
 
 public class testCon {
     public static void main(String [] args )  {
-      // MyConnection.getconnection();
+       MyConnection.getconnection();
 
        //String name = "Ravindu95";
        //String passwd = "12345";
        //User u = new User();
        //u.UserLogin(name,passwd);
         FileRW rw = new FileRW("Kushan Ravindu samaranayake");
-        //rw.write();
+        rw.write();
         rw.Read();
         //rw.clearTheFile();
 

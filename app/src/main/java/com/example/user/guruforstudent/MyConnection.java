@@ -4,7 +4,6 @@ package com.example.user.guruforstudent;
  * Created by USER on 8/13/2018.
  */
 import android.os.StrictMode;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 public class MyConnection {
@@ -17,7 +16,7 @@ public class MyConnection {
             StrictMode.setThreadPolicy(policy);
             Class.forName("com.mysql.jdbc.Driver");
             //con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/gurugedara","root","");
-            con = DriverManager.getConnection("jdbc:mysql://35.198.222.95:3306//gurugedara","guru","guruGedara@2018");
+            con = DriverManager.getConnection("jdbc:mysql://35.198.222.95:3306/gurugedara","guru","guruGedara@2018");
             System.out.print("Connected......................");
         }
         catch(Exception ex){
