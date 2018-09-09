@@ -44,7 +44,8 @@ public class StudentRegistration extends AppCompatActivity {
         regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (phone.getText().length() == 0) {
+                Toast.makeText(getApplicationContext(), "button clicked " , Toast.LENGTH_LONG).show();
+               /* if (phone.getText().length() == 0) {
                     Toast.makeText(getApplicationContext(), "Phone number is Empty", Toast.LENGTH_LONG).show();
                 }
                  else if (nic.getText().length() != 0) {
@@ -68,7 +69,7 @@ public class StudentRegistration extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "not valid OL index number", Toast.LENGTH_LONG).show();}
                     if(!(alindex.getText().length()<=10 || alindex.getText().length()>=7)){
                         Toast.makeText(getApplicationContext(), "not valid AL index number", Toast.LENGTH_LONG).show();}
-                } else {
+                } else { */
 
                     String tel = phone.getText().toString();
                     String nicnum = nic.getText().toString();
@@ -78,34 +79,35 @@ public class StudentRegistration extends AppCompatActivity {
                     String al = alindex.getText().toString();
                    PreparedStatement ps = Student.StReg(nicnum,tel,sch,ag,ol,al);
 
+
                     PreparedStatement ps1 = userRegister.getps();
 
-                    try {
+                   try {
                         if (ps1.executeUpdate() > 0) {
                             Toast.makeText(getApplicationContext(), "Registration Sueccessfull " , Toast.LENGTH_LONG).show();
                         }
                     } catch (SQLException e) {
-                        Toast.makeText(getApplicationContext(), "User Register Fail"+e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "User Register Fail..........."+e.getMessage(), Toast.LENGTH_LONG).show();
+                       System.out.println("User Register Fail..........."+e.getMessage()+"......................");
                     }
 
-                    try {
+                 /*   try {
                         if (ps.executeUpdate() > 0) {
 
 
                             Toast.makeText(getApplicationContext(), "Registration Sueccessfull " , Toast.LENGTH_LONG).show();
-
                             chooseInspg();
                         } else {
                             Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
                         }
                     } catch (Exception e) {
-                        Toast.makeText(getApplicationContext(), "You have already added this email " + e.getMessage(), Toast.LENGTH_LONG).show();
-                    }
+                        Toast.makeText(getApplicationContext(), "........................" + e.getMessage(), Toast.LENGTH_LONG).show();
+                    }      */
 
 
                     //Logger.getLogger(SignupUser.class.getName()).log(Level.SEVERE, null, ex);
 
-                }
+
 
 
             }

@@ -118,6 +118,7 @@ public class userRegister extends AppCompatActivity {
                     String emai = email.getText().toString();
                     String passwrd = passwd.getText().toString();
                     ps = User.UserReg(finame, laname, emai, passwrd, 4);
+                    newps = ps;
                     regstpg();
 
                     //getAllStPos();
