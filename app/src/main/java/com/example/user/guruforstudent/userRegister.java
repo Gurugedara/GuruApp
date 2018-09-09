@@ -30,7 +30,9 @@ public class userRegister extends AppCompatActivity {
     Button regteacher;
     Button regstudent;
     Connection con = null;
-    PreparedStatement ps = null;
+    static int pos = 0;
+    static PreparedStatement newps;
+   PreparedStatement ps = null;
     static List<Integer> lastid = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +71,7 @@ public class userRegister extends AppCompatActivity {
                     String emai = email.getText().toString();
                     String passwrd = passwd.getText().toString();
                     ps = User.UserReg(finame, laname, emai, passwrd, 3);
-
+                    newps = ps;
 
                     try {
                         if (ps.executeUpdate() > 0) {
@@ -116,19 +118,20 @@ public class userRegister extends AppCompatActivity {
                     String emai = email.getText().toString();
                     String passwrd = passwd.getText().toString();
                     ps = User.UserReg(finame, laname, emai, passwrd, 4);
+                    regstpg();
 
-
-                    try {
-                        if (ps.executeUpdate() > 0) {
-                            Toast.makeText(getApplicationContext(), "Registration Sueccessfull", Toast.LENGTH_LONG).show();
-                            getAllStPos();
-                            regstpg();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
-                        }
-                    } catch (SQLException e) {
-                        Toast.makeText(getApplicationContext(), "You have already added this email " + e.getMessage(), Toast.LENGTH_LONG).show();
-                    }
+                    //getAllStPos();
+//                    try {
+//                        if (ps.executeUpdate() > 0) {
+//                            Toast.makeText(getApplicationContext(), "Registration Sueccessfull", Toast.LENGTH_LONG).show();
+//                            getAllStPos();
+//                            regstpg();
+//                        } else {
+//                            Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
+//                        }
+//                    } catch (SQLException e) {
+//                        Toast.makeText(getApplicationContext(), "You have already added this email " + e.getMessage(), Toast.LENGTH_LONG).show();
+//                    }
 
 
                     //Logger.getLogger(SignupUser.class.getName()).log(Level.SEVERE, null, ex);
@@ -152,8 +155,8 @@ public class userRegister extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public List<Integer> getAllStPos() {
-        int pos =0;
+    public void getAllStPos() {
+        int posi =0;
         String finame = fname.getText().toString();
         String laname = lname.getText().toString();
         String emai = email.getText().toString();
@@ -167,17 +170,24 @@ public class userRegister extends AppCompatActivity {
                 ResultSet rs = ps.getGeneratedKeys();
 
                 if (rs.next()) {
-                    pos = rs.getInt(1);
-                    lastid.add(pos);
+                    posi = rs.getInt(1);
+                    //lastid.add(pos);
                 }
 
             }
         } catch (SQLException e) {
             System.out.print(e.getMessage());
         }
-        return lastid;
+        pos = posi;
 
 
+    }
+    public static int getint(){
+        return pos;
+    }
+
+    public static PreparedStatement getps(){
+        return newps;
     }
 }
 

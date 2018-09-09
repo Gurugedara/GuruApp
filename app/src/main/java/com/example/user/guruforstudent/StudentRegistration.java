@@ -12,6 +12,7 @@ import com.example.user.guruforstudent.Models.Student;
 import com.example.user.guruforstudent.Models.User;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class StudentRegistration extends AppCompatActivity {
@@ -48,15 +49,15 @@ public class StudentRegistration extends AppCompatActivity {
                 }
                  else if (nic.getText().length() != 0) {
                     if (nic.getText().length() != 10 || nic.getText().charAt(9) != 'V'){
-                   Toast.makeText(getApplicationContext(), "School is Empty", Toast.LENGTH_LONG).show(); }
+                   Toast.makeText(getApplicationContext(), "Not Valid ID number", Toast.LENGTH_LONG).show(); }
                   }
                  else if (school.getText().length() == 0) {
                     Toast.makeText(getApplicationContext(), "School name is Empty", Toast.LENGTH_LONG).show();
                 }
                 else if (age.getText().length() == 0 ) {
                     Toast.makeText(getApplicationContext(), "Your Age is Empty", Toast.LENGTH_LONG).show();
-                } else if (Integer.parseInt(age.getText().toString()) < 50) {
-                    Toast.makeText(getApplicationContext(), "Your Age is not not match as a student", Toast.LENGTH_LONG).show();
+//                } else if (Integer.parseInt(age.getText().toString()) < 50) {
+//                    Toast.makeText(getApplicationContext(), "Your Age is not not match as a student", Toast.LENGTH_LONG).show();
                 } else if (phone.getText().length() != 10) {
                     Toast.makeText(getApplicationContext(), "Not Valid phone number", Toast.LENGTH_LONG).show();
                 } else if (phone.getText().charAt(0) != '0') {
@@ -77,6 +78,15 @@ public class StudentRegistration extends AppCompatActivity {
                     String al = alindex.getText().toString();
                    PreparedStatement ps = Student.StReg(nicnum,tel,sch,ag,ol,al);
 
+                    PreparedStatement ps1 = userRegister.getps();
+
+                    try {
+                        if (ps1.executeUpdate() > 0) {
+                            Toast.makeText(getApplicationContext(), "Registration Sueccessfull " , Toast.LENGTH_LONG).show();
+                        }
+                    } catch (SQLException e) {
+                        Toast.makeText(getApplicationContext(), "User Register Fail"+e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
 
                     try {
                         if (ps.executeUpdate() > 0) {
@@ -84,11 +94,11 @@ public class StudentRegistration extends AppCompatActivity {
 
                             Toast.makeText(getApplicationContext(), "Registration Sueccessfull " , Toast.LENGTH_LONG).show();
 
-                            chooseInspg();;
+                            chooseInspg();
                         } else {
                             Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
                         }
-                    } catch (SQLException e) {
+                    } catch (Exception e) {
                         Toast.makeText(getApplicationContext(), "You have already added this email " + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
 
@@ -108,5 +118,6 @@ public class StudentRegistration extends AppCompatActivity {
         Intent intent = new Intent(this,ChooseInstitue.class);
         startActivity(intent);
     }
+
 
 }

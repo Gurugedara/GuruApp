@@ -32,8 +32,11 @@ public class Student {
         con = MyConnection.getconnection();
         String query = "INSERT INTO `students`( `nic`, `phone`, `school`, `age`, `olindex`, `alindex`, `user`) VALUES (?,?,?,?,?,?,?)";
         userRegister u = new userRegister();
-        List<Integer> lastId = u.getAllStPos();
-         int pos = lastId.get(lastId.size()-1);
+       // List<Integer> lastId = u.getAllStPos();
+        // int pos = lastId.get(lastId.size()-1);
+        int pos = getAllStPos();
+        System.out.println("----------------------------------------------------------------------------"+pos);
+
         try {
             ps = con.prepareStatement(query);
             ps.setString(1, nic);
@@ -69,6 +72,31 @@ public class Student {
         } catch (Exception e) { e.printStackTrace(); }
         return key;
     } */
+   public static int getAllStPos() {
+       int posi =0;
+       PreparedStatement ps1 = userRegister.getps();
+
+
+
+
+       try {
+           if (ps1.executeUpdate() > 0) {
+
+               ResultSet rs = ps1.getGeneratedKeys();
+
+               if (rs.next()) {
+                   posi = rs.getInt(1);
+                   //lastid.add(pos);
+               }
+
+           }
+       } catch (SQLException e) {
+           System.out.print(e.getMessage());
+       }
+
+       return posi;
+
+   }
 }
 
 
