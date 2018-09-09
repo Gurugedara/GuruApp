@@ -5,4 +5,5 @@ package com.example.user.guruforstudent.Models;
  */
 
 public class teacher {
+
 }

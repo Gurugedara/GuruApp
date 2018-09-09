@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.guruforstudent.Controls.FileRW;
+import com.example.user.guruforstudent.Models.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +21,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 
 public class Login extends AppCompatActivity {
-    Connection con = null;
+    //Connection con = null;
     PreparedStatement ps = null;
     Button tomain;
     Button userregpg;
@@ -37,7 +38,7 @@ public class Login extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
-        con = MyConnection.getconnection();
+        //con = MyConnection.getconnection();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         tomain=(Button)findViewById(R.id.login);
@@ -51,8 +52,23 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 String uname = username.getText().toString();
                 String paswd = passwd.getText().toString();
+                User u = new User();
+                int test = u.UserLogin(uname,paswd);
+                if(test == 1){
+                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_LONG).show();
+                    openslctclsspg();
 
-                try {
+                }
+                else if(test == 0){
+                    Toast.makeText(getApplicationContext(), "Invalid Data", Toast.LENGTH_LONG).show();
+
+                }
+
+                else if(test == 2){
+                    Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
+                }
+
+             /*   try {
 
                     ps = con.prepareStatement("SELECT * FROM `users` WHERE `email`=? AND `password`=?");
                     ps.setString(1, uname);
@@ -77,7 +93,7 @@ public class Login extends AppCompatActivity {
                     System.out.print(e);
                     Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
 
-                }
+                } */
             }
         });
         userregpg.setOnClickListener(new View.OnClickListener() {

@@ -96,7 +96,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/another_qulifications"
+        android:text="Another Qulifications"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 

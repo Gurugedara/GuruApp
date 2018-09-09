@@ -51,6 +51,7 @@ public class ChooseInstitue extends AppCompatActivity {
     private void loadSpin() {
         Institue ins = new Institue();
         List<String> insName = ins.getAllInstitutes();
+
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, insName);
 
