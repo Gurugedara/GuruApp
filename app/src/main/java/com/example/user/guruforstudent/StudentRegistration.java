@@ -45,71 +45,72 @@ public class StudentRegistration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "button clicked " , Toast.LENGTH_LONG).show();
-               /* if (phone.getText().length() == 0) {
+              if (phone.getText().length() == 0) {
                     Toast.makeText(getApplicationContext(), "Phone number is Empty", Toast.LENGTH_LONG).show();
                 }
-                 else if (nic.getText().length() != 0) {
-                    if (nic.getText().length() != 10 || nic.getText().charAt(9) != 'V'){
-                   Toast.makeText(getApplicationContext(), "Not Valid ID number", Toast.LENGTH_LONG).show(); }
-                  }
+
+              else if ((nic.getText().length() != 0)&&(nic.getText().length() != 10 || nic.getText().toString().charAt(9) != 'V')){
+                   Toast.makeText(getApplicationContext(), "Not Valid ID number", Toast.LENGTH_LONG).show();
+                }
+
+
                  else if (school.getText().length() == 0) {
                     Toast.makeText(getApplicationContext(), "School name is Empty", Toast.LENGTH_LONG).show();
                 }
-                else if (age.getText().length() == 0 ) {
+                 else if (age.getText().toString().length() == 0 ) {
                     Toast.makeText(getApplicationContext(), "Your Age is Empty", Toast.LENGTH_LONG).show();
 //                } else if (Integer.parseInt(age.getText().toString()) < 50) {
-//                    Toast.makeText(getApplicationContext(), "Your Age is not not match as a student", Toast.LENGTH_LONG).show();
+//                   Toast.makeText(getApplicationContext(), "Your Age is not not match as a student", Toast.LENGTH_LONG).show();
                 } else if (phone.getText().length() != 10) {
                     Toast.makeText(getApplicationContext(), "Not Valid phone number", Toast.LENGTH_LONG).show();
                 } else if (phone.getText().charAt(0) != '0') {
                     Toast.makeText(getApplicationContext(), "Not Valid phone number", Toast.LENGTH_LONG).show();
 
-                } else if (olindex.getText().length()!=0 || alindex.getText().length()!=0) {
-                    if(!(olindex.getText().length()<=10 || olindex.getText().length()>=8)){
-                    Toast.makeText(getApplicationContext(), "not valid OL index number", Toast.LENGTH_LONG).show();}
-                    if(!(alindex.getText().length()<=10 || alindex.getText().length()>=7)){
-                        Toast.makeText(getApplicationContext(), "not valid AL index number", Toast.LENGTH_LONG).show();}
-                } else { */
+                } else if((olindex.getText().length()!=0)&&(!(olindex.getText().length()<=10 || olindex.getText().length()>=8))){
+                  Toast.makeText(getApplicationContext(), "not valid OL index number", Toast.LENGTH_LONG).show();}
+                  else if((olindex.getText().length()!=0)&&(!(alindex.getText().length()<=10 || alindex.getText().length()>=7))){
+                  Toast.makeText(getApplicationContext(), "not valid AL index number", Toast.LENGTH_LONG).show();}
 
-                    String tel = phone.getText().toString();
-                    String nicnum = nic.getText().toString();
-                    String sch = school.getText().toString();
-                    int ag = Integer.parseInt(age.getText().toString());
-                    String ol = olindex.getText().toString();
-                    String al = alindex.getText().toString();
-                   PreparedStatement ps = Student.StReg(nicnum,tel,sch,ag,ol,al);
+                else {
 
-
-                    PreparedStatement ps1 = userRegister.getps();
-                try {
-                    if (ps.executeUpdate() > 0) {
+                  String tel = phone.getText().toString();
+                  String nicnum = nic.getText().toString();
+                  String sch = school.getText().toString();
+                  int ag = Integer.parseInt(age.getText().toString());
+                  String ol = olindex.getText().toString();
+                  String al = alindex.getText().toString();
+                  PreparedStatement ps = Student.StReg(nicnum, tel, sch, ag, ol, al);
 
 
-                        Toast.makeText(getApplicationContext(), "Registration Sueccessfull " , Toast.LENGTH_LONG).show();
-                        chooseInspg();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
-                    }
-                } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), "........................" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
+                  PreparedStatement ps1 = userRegister.getps();
+                  try {
+                      if (ps.executeUpdate() > 0) {
 
-                try {
+
+                          Toast.makeText(getApplicationContext(), "Registration Sueccessfull ", Toast.LENGTH_LONG).show();
+                          chooseInspg();
+                      } else {
+                          Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
+                      }
+                  } catch (Exception e) {
+                      Toast.makeText(getApplicationContext(), "........................" + e.getMessage(), Toast.LENGTH_LONG).show();
+                  }
+
+
+                  /*  try {
                         if (ps1.executeUpdate() > 0) {
-                            Toast.makeText(getApplicationContext(), "Registration Sueccessfull " , Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Registration Sueccessfull ", Toast.LENGTH_LONG).show();
                         }
                     } catch (SQLException e) {
-                        Toast.makeText(getApplicationContext(), "User Register Fail..........."+e.getMessage(), Toast.LENGTH_LONG).show();
-                       System.out.println("User Register Fail..........."+e.getMessage()+"......................");
-                    }
-
-
+                        Toast.makeText(getApplicationContext(), "User Register Fail..........." + e.getMessage(), Toast.LENGTH_LONG).show();
+                        System.out.println("User Register Fail..........." + e.getMessage() + "......................");
+                    }  */
 
 
                     //Logger.getLogger(SignupUser.class.getName()).log(Level.SEVERE, null, ex);
 
 
-
+               }
 
             }
         });
