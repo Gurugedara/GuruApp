@@ -23,7 +23,7 @@ public class teacher {
     public teacher(){
         con = MyConnection.getconnection();
     }
-    public static PreparedStatement StReg(String nic, String phone, String school, String edu, String subject,String qulific) {
+    public static PreparedStatement teachReg(String nic, String phone, String school, String edu, String subject,String qulific) {
         con = MyConnection.getconnection();
         String query = "INSERT INTO `teachers`(`nic`, `phone`, `school`, `education`, `subjects`, `qualification`, `user`) VALUES (?,?,?,?,?,?,?)";
 
