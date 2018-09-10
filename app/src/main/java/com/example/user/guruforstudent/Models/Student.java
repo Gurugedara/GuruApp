@@ -1,6 +1,7 @@
 package com.example.user.guruforstudent.Models;
 
 import com.example.user.guruforstudent.MyConnection;
+import com.example.user.guruforstudent.testUser;
 import com.example.user.guruforstudent.userRegister;
 
 import java.sql.Connection;
@@ -31,7 +32,7 @@ public class Student {
     public static PreparedStatement StReg(String nic, String phone, String school, int age, String olindex,String alindex) {
         con = MyConnection.getconnection();
         String query = "INSERT INTO `students`( `nic`, `phone`, `school`, `age`, `olindex`, `alindex`, `user`) VALUES (?,?,?,?,?,?,?)";
-        userRegister u = new userRegister();
+       // userRegister u = new userRegister();
        // List<Integer> lastId = u.getAllStPos();
         // int pos = lastId.get(lastId.size()-1);
         int pos = getAllStPos();
@@ -75,6 +76,8 @@ public class Student {
    public static int getAllStPos() {
        int posi =0;
        PreparedStatement ps1 = userRegister.getps();
+       //testUser.passValue();
+       //PreparedStatement ps1 = testUser.getTestps();
 
 
 

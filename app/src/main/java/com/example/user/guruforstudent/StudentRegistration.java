@@ -81,8 +81,20 @@ public class StudentRegistration extends AppCompatActivity {
 
 
                     PreparedStatement ps1 = userRegister.getps();
+                try {
+                    if (ps.executeUpdate() > 0) {
 
-                   try {
+
+                        Toast.makeText(getApplicationContext(), "Registration Sueccessfull " , Toast.LENGTH_LONG).show();
+                        chooseInspg();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "........................" + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+                try {
                         if (ps1.executeUpdate() > 0) {
                             Toast.makeText(getApplicationContext(), "Registration Sueccessfull " , Toast.LENGTH_LONG).show();
                         }
@@ -91,18 +103,7 @@ public class StudentRegistration extends AppCompatActivity {
                        System.out.println("User Register Fail..........."+e.getMessage()+"......................");
                     }
 
-                 /*   try {
-                        if (ps.executeUpdate() > 0) {
 
-
-                            Toast.makeText(getApplicationContext(), "Registration Sueccessfull " , Toast.LENGTH_LONG).show();
-                            chooseInspg();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
-                        }
-                    } catch (Exception e) {
-                        Toast.makeText(getApplicationContext(), "........................" + e.getMessage(), Toast.LENGTH_LONG).show();
-                    }      */
 
 
                     //Logger.getLogger(SignupUser.class.getName()).log(Level.SEVERE, null, ex);
