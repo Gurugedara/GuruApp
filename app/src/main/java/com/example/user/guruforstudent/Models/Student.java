@@ -29,7 +29,7 @@ public class Student {
     public Student(){
         con = MyConnection.getconnection();
     }
-    public static PreparedStatement StReg(String nic, String phone, String school, int age, String olindex,String alindex) {
+    public static PreparedStatement StReg(String nic, String phone, String school, int age, String olindex,String alindex)  {
         con = MyConnection.getconnection();
         String query = "INSERT INTO `students`( `nic`, `phone`, `school`, `age`, `olindex`, `alindex`, `user_id`) VALUES (?,?,?,?,?,?,?)";
        // userRegister u = new userRegister();
@@ -47,10 +47,12 @@ public class Student {
             ps.setString(5, olindex);
             ps.setString(6, alindex);
             ps.setInt(7,pos);
+            //con.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
 
 
         return ps;
@@ -91,6 +93,7 @@ public class Student {
                    posi = rs.getInt(1);
                    //lastid.add(pos);
                }
+               //con.close();
 
            }
        } catch (SQLException e) {

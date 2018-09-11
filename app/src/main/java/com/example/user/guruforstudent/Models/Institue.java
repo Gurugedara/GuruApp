@@ -40,6 +40,7 @@ public class Institue {
                 insName.add(rs.getString(1).toString());
 
             }
+            con.close();
 
         } catch (SQLException e) {
             //Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();

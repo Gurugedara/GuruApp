@@ -19,12 +19,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.*;
+// Import Java package for File I/O
+import java.io.*;
 
 /**
      * Created by USER on 8/14/2018.
      */
 
     public class User {
+
         static Connection con = null;
         static PreparedStatement ps = null;
         String email;
@@ -34,9 +38,11 @@ import java.sql.Statement;
 
         public User() {
             con = MyConnection.getconnection();
+
         }
 
         public int UserLogin(String email, String passwd) {
+
             this.email = email;
             this.passwd = passwd;
             try {
@@ -46,20 +52,27 @@ import java.sql.Statement;
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
                     System.out.print("Login Sucess");
+                    //con.close();
                     return 1;
 
                 } else {
                     System.out.print("Login fail");
+                    //con.close();
                     return 0;
                 }
+                //rs.close();
+                //ps.close();
+                 //con.close();
 
             } catch (Exception e) {
                 System.out.print(e);
                 return 2;
             }
+
+
         }
 
-        public static PreparedStatement UserReg(String firstname, String lastname, String email, String password,int roleid) {
+        public static PreparedStatement UserReg(String firstname, String lastname, String email, String password,int roleid)  {
             con = MyConnection.getconnection();
             String query = "INSERT INTO `users`( `firstname`, `Lastname`, `email`, `password`, `role_id`) VALUES (?,?,?,?,?)";
             try {
@@ -76,8 +89,12 @@ import java.sql.Statement;
             }
 
 
+
+
             return ps;
+
         }
+        //con.close();
 
     }
 

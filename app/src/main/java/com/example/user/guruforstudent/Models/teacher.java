@@ -39,17 +39,19 @@ public class teacher {
             ps.setString(5, subject);
             ps.setString(6, qulific);
             ps.setInt(7,pos);
+            //con.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
 
+
         return ps;
     }
 
 
-    public static int getAllteachPos() {
+    public static int getAllteachPos()  {
         int posi =0;
         PreparedStatement ps1 = userRegister.getps();
 
@@ -63,13 +65,16 @@ public class teacher {
 
                 if (rs.next()) {
                     posi = rs.getInt(1);
+
                     //lastid.add(pos);
                 }
+                //con.close();
 
             }
         } catch (SQLException e) {
             System.out.print(e.getMessage());
         }
+
 
         return posi;
 
