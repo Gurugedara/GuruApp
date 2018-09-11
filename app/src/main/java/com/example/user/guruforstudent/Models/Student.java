@@ -31,7 +31,7 @@ public class Student {
     }
     public static PreparedStatement StReg(String nic, String phone, String school, int age, String olindex,String alindex) {
         con = MyConnection.getconnection();
-        String query = "INSERT INTO `students`( `nic`, `phone`, `school`, `age`, `olindex`, `alindex`, `user`) VALUES (?,?,?,?,?,?,?)";
+        String query = "INSERT INTO `students`( `nic`, `phone`, `school`, `age`, `olindex`, `alindex`, `user_id`) VALUES (?,?,?,?,?,?,?)";
        // userRegister u = new userRegister();
        // List<Integer> lastId = u.getAllStPos();
         // int pos = lastId.get(lastId.size()-1);
@@ -76,8 +76,8 @@ public class Student {
    public static int getAllStPos() {
        int posi =0;
        PreparedStatement ps1 = userRegister.getps();
-       //testUser.passValue();
-       //PreparedStatement ps1 = testUser.getTestps();
+//       testUser.passValue();
+//       PreparedStatement ps1 = testUser.getTestps();
 
 
 

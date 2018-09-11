@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 public class testUser {
     static PreparedStatement testps;
     public static void passValue(){
-        PreparedStatement ps = User.UserReg("KUSHAN","RAVINDU","killlllool@gmail.com","12345678",4);
+        PreparedStatement ps = User.UserReg("KUSHAN","RAVINDU","kishaklfbjj@gmail.com","12345678",4);
         testps =ps;
     }
     public static PreparedStatement getTestps(){

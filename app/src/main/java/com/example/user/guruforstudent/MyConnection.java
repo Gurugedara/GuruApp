@@ -11,9 +11,9 @@ public class MyConnection {
 
         Connection con = null;
         try{
-          StrictMode.ThreadPolicy policy = new  StrictMode.ThreadPolicy.Builder()
-                 .permitAll().build();
-           StrictMode.setThreadPolicy(policy);
+         StrictMode.ThreadPolicy policy = new  StrictMode.ThreadPolicy.Builder()
+                .permitAll().build();
+         StrictMode.setThreadPolicy(policy);
             Class.forName("com.mysql.jdbc.Driver");
             //con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/gurugedara","root","");
             con = DriverManager.getConnection("jdbc:mysql://35.198.222.95:3306/gurugedara","guru","guruGedara@2018");

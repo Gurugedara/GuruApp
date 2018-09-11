@@ -47,19 +47,19 @@ public class testCon {
         PreparedStatement ps2 = testStudent.getTestps();
 
 
-        try {
-            if (ps1.executeUpdate() > 0) {
-                System.out.println("Register Success");
-
-            }
-
-        } catch (SQLException e) {
-
-            System.out.println("User Register Fail..........."+e.getMessage()+"......................");
-        }
+//        try {
+//            if (ps1.executeUpdate() > 0) {
+//                System.out.println("Register Success");
+//
+//            }
+//
+//        } catch (SQLException e) {
+//
+//            System.out.println("User Register Fail..........."+e.getMessage()+"......................");
+//        }
         try {
             if (ps2.executeUpdate() > 0) {
-                System.out.println("Register2 i Success");
+                System.out.println("Student Register Success");
 
             }
 

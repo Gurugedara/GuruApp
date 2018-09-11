@@ -44,7 +44,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/town"
+        android:id="@+id/nic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -54,7 +54,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/current_working_school"
+        android:text="Current Working School or Institute"
         android:textColor="@color/Crimson"
         android:textStyle="bold" />
 
@@ -73,11 +73,12 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/age"
+        android:id="@+id/eduq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number" />
+        android:hint="Degree or Deploma"
+        android:inputType="text|textMultiLine" />
 
     <TextView
         android:layout_width="match_parent"
@@ -87,11 +88,12 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/oLindex"
+        android:id="@+id/subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number" />
+        android:hint="Subject1,Subject2,.."
+        android:inputType="text" />
 
     <TextView
         android:layout_width="match_parent"
@@ -101,11 +103,12 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/ALindex"
+        android:id="@+id/another"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number" />
+        android:hint="Extra Courses Of relevent Your Subject"
+        android:inputType="textImeMultiLine" />
 
     <LinearLayout
         android:layout_width="match_parent"

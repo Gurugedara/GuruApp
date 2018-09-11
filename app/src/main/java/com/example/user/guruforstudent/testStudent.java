@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 public class testStudent {
     static PreparedStatement testps2;
     public static void passValue(){
-        PreparedStatement ps = Student.StReg("952450003V","0915780867","RCG",21,"06001232","01122222");
+        PreparedStatement ps = Student.StReg("952410343V","0915780867","RCG",21,"06001232","01442222");
         testps2 =ps;
     }
     public static PreparedStatement getTestps(){
