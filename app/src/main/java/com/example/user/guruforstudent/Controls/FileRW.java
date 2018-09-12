@@ -1,40 +1,98 @@
 package com.example.user.guruforstudent.Controls;
-import java.io.*;
+import android.widget.Toast;
+
+//import java.io.*;
+import com.example.user.guruforstudent.Login;
+
 import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * Created by USER on 9/3/2018.
  */
 
 public class FileRW {
-         String username;
-         public FileRW(String username){
-             this.username = username;
-         }
-         public FileRW(){}
+   /** String username;
+    private static final String FILE_NAME = "test.txt";
 
+    public FileRW(String username) {
+        this.username = username;
+    }
 
-    public void write() {
-        //String text = "Hello world";
-        BufferedWriter output = null;
+    public FileRW() {
+    }
+
+    public void save() {
+        String text = this.username;
+        FileOutputStream fos = null;
         try {
-            File file = new File("C:\\Users\\USER\\GuruforStudent\\app\\src\\main\\java\\com\\example\\user\\guruforstudent\\Controls\\temp.txt");
-            output = new BufferedWriter(new FileWriter(file));
-            output.write(username);
+            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+            fos.write(text.getBytes());
+            //username.getText().clear();
+            //Toast.makeText(getApplicationContext(), "Save to " + getFilesDir(), Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+
         } finally {
-            if (output != null) {
+            if (fos != null) {
+
                 try {
-                    output.close();
+                    fos.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
+
     }
 
+    public void load() {
+        FileInputStream fis = null;
+        try {
+            fis = openFileInput(FILE_NAME);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+            while ((text = br.readLine()) != null) {
+                sb.append(text).append("\n");
+            }
+            Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_LONG).show();
 
-    public void clearTheFile() {
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    } **/
+}
+
+
+
+
+
+
+
+   /* public void clearTheFile() {
         FileWriter fwOb = null;
         try {
             fwOb = new FileWriter("C:\\Users\\USER\\GuruforStudent\\app\\src\\main\\java\\com\\example\\user\\guruforstudent\\Controls\\temp.txt", false);
@@ -46,49 +104,7 @@ public class FileRW {
             e.printStackTrace();
         }
 
-    }
-
-    public String Read() {
-        //this.username = username;
-
-
-            // The name of the file to open.
-            String fileName = "C:\\Users\\USER\\GuruforStudent\\app\\src\\main\\java\\com\\example\\user\\guruforstudent\\Controls\\temp.txt";
-
-            // This will reference one line at a time
-            String line = null;
-
-            try {
-                // FileReader reads text files in the default encoding.
-                FileReader fileReader =
-                        new FileReader(fileName);
-
-                // Always wrap FileReader in BufferedReader.
-                BufferedReader bufferedReader =
-                        new BufferedReader(fileReader);
-
-                while((line = bufferedReader.readLine()) != null) {
-                    System.out.println(line);
-                }
-
-                // Always close files.
-                bufferedReader.close();
-            }
-            catch(FileNotFoundException ex) {
-                System.out.println(
-                        "Unable to open file '" +
-                                fileName + "'");
-            }
-            catch(IOException ex) {
-                System.out.println(
-                        "Error reading file '"
-                                + fileName + "'");
-                // Or we could just do this:
-                // ex.printStackTrace();
-            }
-         return line;
-        }
-    }
+    } */
 
 
 

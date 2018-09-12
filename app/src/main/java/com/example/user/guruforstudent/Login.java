@@ -27,6 +27,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 
 public class Login extends AppCompatActivity {
+
     //Connection con = null;
     PreparedStatement ps = null;
     Button tomain;
@@ -36,6 +37,7 @@ public class Login extends AppCompatActivity {
     TextView tv;
     private static final String FILE_NAME = "test.txt";
    // User u = new User();
+    public Login(){}
 
     @Override
 
@@ -122,11 +124,13 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this,userRegister.class);
         startActivity(intent);
     }
-    public void save(){
+    public void  save(){
         String text = username.getText().toString();
         FileOutputStream fos = null;
+
+
         try {
-            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+           fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
             fos.write(text.getBytes());
             username.getText().clear();
             Toast.makeText(getApplicationContext(),"Save to "+getFilesDir(), Toast.LENGTH_LONG).show();
@@ -145,37 +149,40 @@ public class Login extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+    public String load(){
+        FileInputStream fis = null;
+        String val = "";
+        try {
+            fis = openFileInput(FILE_NAME);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+            while((text = br.readLine()) != null){
+                sb.append(text).append("\n");
+            }
+            val = sb.toString();
+            Toast.makeText(getApplicationContext(),val, Toast.LENGTH_LONG).show();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if(fis != null){
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
-        public void load(){
-            FileInputStream fis = null;
-            try {
-                fis = openFileInput(FILE_NAME);
-                InputStreamReader isr = new InputStreamReader(fis);
-                BufferedReader br = new BufferedReader(isr);
-                StringBuilder sb = new StringBuilder();
-                String text;
-                while((text = br.readLine()) != null){
-                       sb.append(text).append("\n");
-                }
-                Toast.makeText(getApplicationContext(),sb.toString(), Toast.LENGTH_LONG).show();
+     return val;
 
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally {
-                if(fis != null){
-                    try {
-                        fis.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
+    }
 
-
-        }
 }
 
 

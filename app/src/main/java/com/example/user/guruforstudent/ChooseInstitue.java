@@ -35,8 +35,8 @@ public class ChooseInstitue extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FileRW rw = new FileRW();
-                rw.clearTheFile();
+                //FileRW rw = new FileRW();
+                //rw.clearTheFile();
                 tologinpg();
             }
         });
