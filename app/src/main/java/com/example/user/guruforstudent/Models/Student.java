@@ -103,6 +103,13 @@ public class Student {
        return posi;
 
    }
+    public static void conClose(){
+        try {
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 

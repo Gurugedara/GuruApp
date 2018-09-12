@@ -95,6 +95,13 @@ import java.io.*;
 
         }
         //con.close();
+        public static void conClose(){
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 

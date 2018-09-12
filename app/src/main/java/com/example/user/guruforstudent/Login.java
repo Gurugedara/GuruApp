@@ -13,6 +13,12 @@ import android.widget.Toast;
 import com.example.user.guruforstudent.Controls.FileRW;
 import com.example.user.guruforstudent.Models.User;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -28,6 +34,7 @@ public class Login extends AppCompatActivity {
     EditText username;
     EditText passwd;
     TextView tv;
+    private static final String FILE_NAME = "test.txt";
    // User u = new User();
 
     @Override
@@ -50,7 +57,8 @@ public class Login extends AppCompatActivity {
         tomain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String uname = username.getText().toString();
+                save();
+             /*   String uname = username.getText().toString();
                 String paswd = passwd.getText().toString();
                 User u = new User();
                 int test = u.UserLogin(uname,paswd);
@@ -66,7 +74,7 @@ public class Login extends AppCompatActivity {
 
                 else if(test == 2){
                     Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
-                }
+                }  */
 
              /*   try {
 
@@ -99,7 +107,8 @@ public class Login extends AppCompatActivity {
         userregpg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openregpg();
+                load();
+               // openregpg();
             }
         });
 
@@ -113,5 +122,60 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this,userRegister.class);
         startActivity(intent);
     }
+    public void save(){
+        String text = username.getText().toString();
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+            fos.write(text.getBytes());
+            username.getText().clear();
+            Toast.makeText(getApplicationContext(),"Save to "+getFilesDir(), Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
 
+        }
+        finally{
+            if(fos != null){
+
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            }
+        }
+        public void load(){
+            FileInputStream fis = null;
+            try {
+                fis = openFileInput(FILE_NAME);
+                InputStreamReader isr = new InputStreamReader(fis);
+                BufferedReader br = new BufferedReader(isr);
+                StringBuilder sb = new StringBuilder();
+                String text;
+                while((text = br.readLine()) != null){
+                       sb.append(text).append("\n");
+                }
+                Toast.makeText(getApplicationContext(),sb.toString(), Toast.LENGTH_LONG).show();
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }finally {
+                if(fis != null){
+                    try {
+                        fis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+
+        }
 }
+
+
