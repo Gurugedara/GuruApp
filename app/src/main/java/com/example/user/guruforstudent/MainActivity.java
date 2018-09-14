@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
 
             public void onClick(View view) {
-                Login lg = new Login();
+               // Login lg = new Login();
               //String username= lg.load();
               /** if(username == "") {
                    openLoginpg();
@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
                    chooseInspg();
 
                } **/
-            // openLoginpg();
-                lg.openregpg();
+              openLoginpg();
+               // lg.openregpg();
             }
         });
 

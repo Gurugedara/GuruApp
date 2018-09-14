@@ -59,8 +59,8 @@ public class Login extends AppCompatActivity {
         tomain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                save();
-             /*   String uname = username.getText().toString();
+               // save();
+                String uname = username.getText().toString();
                 String paswd = passwd.getText().toString();
                 User u = new User();
                 int test = u.UserLogin(uname,paswd);
@@ -76,9 +76,9 @@ public class Login extends AppCompatActivity {
 
                 else if(test == 2){
                     Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
-                }  */
+                }
 
-             /*   try {
+             /*  try {
 
                     ps = con.prepareStatement("SELECT * FROM `users` WHERE `email`=? AND `password`=?");
                     ps.setString(1, uname);
@@ -103,14 +103,14 @@ public class Login extends AppCompatActivity {
                     System.out.print(e);
                     Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
 
-                } */
+                }  */
             }
         });
         userregpg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                load();
-               // openregpg();
+               // load();
+                openregpg();
             }
         });
 
