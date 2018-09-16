@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                } **/
               openLoginpg();
                // lg.openregpg();
+               // chooseInspg();
             }
         });
 

@@ -32,7 +32,7 @@
         <activity android:name=".StudentRegistration" />
         <activity android:name=".ChooseInstitue" />
         <activity android:name=".WaitingReg" />
-        <activity android:name=".teacherRegistration"></activity>
+        <activity android:name=".teacherRegistration" />
     </application>
 
 </manifest>
