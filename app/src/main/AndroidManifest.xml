@@ -33,6 +33,10 @@
         <activity android:name=".ChooseInstitue" />
         <activity android:name=".WaitingReg" />
         <activity android:name=".teacherRegistration" />
+        <activity
+            android:name=".Home"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

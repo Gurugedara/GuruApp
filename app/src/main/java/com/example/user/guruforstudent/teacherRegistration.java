@@ -53,7 +53,7 @@ public class teacherRegistration extends AppCompatActivity {
      Toast.makeText(getApplicationContext(), "Phone number is Empty", Toast.LENGTH_LONG).show();
  }
 
- else if ((nic.getText().length() != 0)&&(nic.getText().length() != 10 || nic.getText().toString().charAt(9) != 'V')){
+ else if ((nic.getText().length() != 0)&&(nic.getText().length() != 10 || nic.getText().toString().charAt(9) != 'V' )){
  Toast.makeText(getApplicationContext(), "Not Valid ID number", Toast.LENGTH_LONG).show();
  }
 
