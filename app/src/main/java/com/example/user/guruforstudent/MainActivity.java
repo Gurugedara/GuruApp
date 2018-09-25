@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void openLoginpg() {
-        Intent intent = new Intent(this,Login.class);
+        Intent intent = new Intent(this,Home.class);
         startActivity(intent);
     }
     public void chooseInspg() {

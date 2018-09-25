@@ -168,6 +168,8 @@
     <string name="user_gmail_com">user@gmail.com</string>
 
     <string name="title_activity_setting">Setting</string>
+    <string name="title_activity_setting_account">SettingAccount</string>
+    <string name="setting_account">Setting Account</string>
 
 
 </resources>

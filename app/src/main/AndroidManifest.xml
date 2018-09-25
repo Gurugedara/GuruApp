@@ -40,6 +40,12 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".SettingAccount"
+            android:label="@string/title_activity_setting_account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".about" />
+        <activity android:name=".Help"></activity>
     </application>
 
 </manifest>

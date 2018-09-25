@@ -14,16 +14,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Home extends AppCompatActivity
+public class SettingAccount extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    DrawerLayout drawer;
-    NavigationView navigationView;
-    Toolbar toolbar = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_setting_account);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -85,23 +82,24 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Home) {
-            Intent h = new Intent(Home.this,Home.class);
+            Intent h = new Intent(SettingAccount.this,Home.class);
             startActivity(h);
         } else if (id == R.id.setting) {
-            Intent s = new Intent(Home.this ,SettingAccount.class);
+            Intent s = new Intent(SettingAccount.this ,SettingAccount.class);
             startActivity(s);
 
         } else if (id == R.id.help) {
-            Intent l = new Intent(Home.this,Help.class);
+            Intent l = new Intent(SettingAccount.this,Help.class);
             startActivity(l);
 
         } else if (id == R.id.aboutapp) {
-            Intent a = new Intent(Home.this,about.class);
+            Intent a = new Intent(SettingAccount.this,about.class);
             startActivity(a);
 
 
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
