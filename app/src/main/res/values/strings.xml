@@ -166,7 +166,8 @@
     <string name="action_settings">Settings</string>
     <string name="userr_name">User name</string>
     <string name="user_gmail_com">user@gmail.com</string>
-    <string name="todo">TODO</string>
+
+    <string name="title_activity_setting">Setting</string>
 
 
 </resources>

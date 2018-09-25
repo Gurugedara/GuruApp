@@ -9,27 +9,23 @@
             android:icon="@drawable/ic_home"
             android:title="Home" />
         <item
-            android:id="@+id/modules"
-            android:icon="@drawable/ic_syllabus"
-            android:title="Syllabus Modules" />
-        <item
-            android:id="@+id/communicate"
-            android:icon="@drawable/icons8-sms-24"
-            android:title="Comments" />
-
-        <item
-            android:id="@+id/timeTable"
-            android:icon="@drawable/ic_shedule"
-            android:title="Your Shedule" />
-        <item
             android:id="@+id/setting"
-            android:icon="@drawable/icons8-services-24"
+            android:icon="@drawable/ic_setting"
             android:title="Settings" />
 
         <item
-            android:id="@+id/lgout"
-            android:icon="@drawable/icons8-shutdown-24"
-            android:title="LogOut" />
+            android:id="@+id/help"
+            android:icon="@drawable/ic_help"
+            android:title="Help" />
+        <item
+            android:id="@+id/aboutapp"
+            android:icon="@drawable/ic_about"
+            android:title="About App" />
+
+
+
+
+
 
     </group>
 
