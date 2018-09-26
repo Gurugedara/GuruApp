@@ -83,10 +83,10 @@ public class SettingAccount extends AppCompatActivity
 
         if (id == R.id.Home) {
             Intent h = new Intent(SettingAccount.this,Home.class);
-            startActivity(h);
-        } else if (id == R.id.setting) {
-            Intent s = new Intent(SettingAccount.this ,SettingAccount.class);
+            startActivity(h);            Intent s = new Intent(SettingAccount.this ,SettingAccount.class);
             startActivity(s);
+
+        } else if (id == R.id.setting) {
 
         } else if (id == R.id.help) {
             Intent l = new Intent(SettingAccount.this,Help.class);
