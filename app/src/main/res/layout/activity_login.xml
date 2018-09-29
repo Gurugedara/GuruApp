@@ -10,15 +10,15 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:padding="16dp"
-        android:text="@string/register_and_sign_in"
-        android:textAllCaps="true"
-        android:textColor="@color/Crimson"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:padding="16dp"
+    android:text="@string/register_and_sign_in"
+    android:textAllCaps="true"
+    android:textColor="@color/Crimson"
+    android:textSize="24sp"
+    android:textStyle="bold" />
 
     <EditText
         android:id="@+id/txtUname"
@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:background="#6ef4f4f4"
         android:drawablePadding="78dp"
-        android:drawableStart="@drawable/ic_person_white_24dp"
+
         android:ems="1"
         android:hint="@string/username"
         android:inputType="textEmailAddress"
@@ -41,7 +41,7 @@
         android:layout_marginTop="16dp"
         android:background="#6ef4f4f4"
         android:drawablePadding="78dp"
-        android:drawableStart="@drawable/ic_lock_white_24dp"
+
         android:ems="1"
         android:hint="@string/string"
         android:inputType="textPassword"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:background="@drawable/background_login_two"
+
         android:paddingLeft="48dp"
         android:paddingRight="48dp"
         android:text="@string/login_in"
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="4.5"
             android:background="@color/Coral"
-            android:drawableStart="@drawable/ic_google_plus"
+
             android:padding="16dp"
             android:text="@string/google"
             android:textAllCaps="false"
