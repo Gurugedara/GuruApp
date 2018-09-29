@@ -2,8 +2,10 @@ package com.example.user.guruforstudent;
 
 import android.content.Intent;
 import android.os.StrictMode;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,10 @@ import android.widget.Toast;
 
 import com.example.user.guruforstudent.Controls.FileRW;
 import com.example.user.guruforstudent.Models.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -35,15 +41,12 @@ public class Login extends AppCompatActivity {
     EditText username;
     EditText passwd;
     TextView tv;
+    FirebaseAuth auth;
 //    private static final String FILE_NAME = "test.txt";
    // User u = new User();
     public Login(){}
 
     @Override
-
-
-
-
 
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -54,7 +57,12 @@ public class Login extends AppCompatActivity {
         userregpg = (Button)findViewById(R.id.regBtn);
         username =(EditText)findViewById(R.id.txtUname);
         passwd =(EditText)findViewById(R.id.txtPasswd);
+        auth = FirebaseAuth.getInstance();
 
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(Login.this, Home.class));
+            finish();
+        }
 
         tomain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,21 +70,36 @@ public class Login extends AppCompatActivity {
                // save();
                 String uname = username.getText().toString();
                 String paswd = passwd.getText().toString();
-                User u = new User();
-                int test = u.UserLogin(uname,paswd);
-                if(test == 1){
-                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_LONG).show();
-                    openslctclsspg();
 
-                }
-                else if(test == 0){
-                    Toast.makeText(getApplicationContext(), "Invalid Data", Toast.LENGTH_LONG).show();
+                auth.signInWithEmailAndPassword(uname,paswd).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(!task.isSuccessful()){
+                            Toast.makeText(Login.this,"Username or password is invalid",Toast.LENGTH_LONG).show();
+                        }else{
+                            startActivity(new Intent(Login.this,ChooseInstitue.class));
+                            finish();
+                        }
+                    }
+                });
 
-                }
 
-                else if(test == 2){
-                    Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
-                }
+//                User u = new User();
+//                int test = u.UserLogin(uname,paswd);
+//                if(test == 1){
+//
+//                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_LONG).show();
+//                    openslctclsspg();
+//
+//                }
+//                else if(test == 0){
+//                    Toast.makeText(getApplicationContext(), "Invalid Data", Toast.LENGTH_LONG).show();
+//
+//                }
+//
+//                else if(test == 2){
+//                    Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
+//                }
 
              /*  try {
 

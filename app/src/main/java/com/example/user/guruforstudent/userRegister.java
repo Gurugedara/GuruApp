@@ -29,6 +29,9 @@ public class userRegister extends AppCompatActivity {
     Button regteacher;
     Button regstudent;
 
+    //for Firebase Auth
+    String returnEmail=null;
+    String returnPassword=null;
 
     static PreparedStatement newps;
    PreparedStatement ps = null;
@@ -68,7 +71,9 @@ public class userRegister extends AppCompatActivity {
                     String finame = fname.getText().toString();
                     String laname = lname.getText().toString();
                     String emai = email.getText().toString();
+                    returnEmail = emai;
                     String passwrd = passwd.getText().toString();
+                    returnPassword = passwrd;
                     ps = User.UserReg(finame, laname, emai, passwrd, 3);
                     newps = ps;
                     regteachpg();
@@ -104,12 +109,12 @@ public class userRegister extends AppCompatActivity {
                     String finame = fname.getText().toString();
                     String laname = lname.getText().toString();
                     String emai = email.getText().toString();
+                    returnEmail = emai;
                     String passwrd = passwd.getText().toString();
+                    returnPassword = passwrd;
                     ps = User.UserReg(finame, laname, emai, passwrd, 4);
                     newps = ps;
                     regstpg();
-
-
 
                 }
 
@@ -119,14 +124,19 @@ public class userRegister extends AppCompatActivity {
     }
 
     public void regteachpg() {
-        Intent intent = new Intent(this, teacherRegistration.class);
+        Intent intent = new Intent(getBaseContext(), teacherRegistration.class);
+        intent.putExtra("Email",email.getText().toString());
+        intent.putExtra("Password",passwd.getText().toString());
         startActivity(intent);
-
 
     }
 
     public void regstpg() {
         Intent intent = new Intent(this, StudentRegistration.class);
+        System.out.println("Email = "+returnEmail);
+        System.out.println("password = "+returnPassword);
+        intent.putExtra("Email",returnEmail);
+        intent.putExtra("Password",returnPassword);
         startActivity(intent);
     }
 
@@ -134,5 +144,6 @@ public class userRegister extends AppCompatActivity {
     public static PreparedStatement getps(){
         return newps;
     }
+
 }
 
