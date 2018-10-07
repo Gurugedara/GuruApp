@@ -170,6 +170,10 @@
     <string name="title_activity_setting">Setting</string>
     <string name="title_activity_setting_account">SettingAccount</string>
     <string name="setting_account">Setting Account</string>
+    <string name="title_activity_dash">dash</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
 
 
 </resources>
