@@ -18,6 +18,7 @@
         <activity android:name=".splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -46,6 +47,9 @@
         <activity android:name=".about" />
         <activity android:name=".Help" />
 
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/cercleshape" />
     </application>
 
 </manifest>
