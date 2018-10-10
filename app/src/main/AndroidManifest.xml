@@ -18,6 +18,7 @@
         <activity android:name=".splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -39,13 +40,15 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity
-            android:name=".SettingAccount"
-            android:label="@string/title_activity_setting_account"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".about" />
         <activity android:name=".Help" />
 
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/cercleshape" />
+
+        <activity android:name=".Models.Settings" />
+        <activity android:name=".Settings" />
     </application>
 
 </manifest>

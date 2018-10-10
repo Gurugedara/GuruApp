@@ -44,6 +44,7 @@ public class ChooseInstitue extends AppCompatActivity {
         nxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                openHomepg();
             }
         });
       /*  logout.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +73,11 @@ public class ChooseInstitue extends AppCompatActivity {
         });
 
         }
+
+    private void openHomepg() {
+        Intent intent = new Intent(this,Home.class);
+        startActivity(intent);
+    }
 
   /*  public void tologinpg() {
         Intent intent = new Intent(this,Login.class);
