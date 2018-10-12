@@ -75,7 +75,7 @@ public class ChooseInstitue extends AppCompatActivity {
         }
 
     private void openHomepg() {
-        Intent intent = new Intent(this,Home.class);
+        Intent intent = new Intent(this,DashBoard.class);
         startActivity(intent);
     }
 

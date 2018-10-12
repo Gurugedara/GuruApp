@@ -14,13 +14,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class SettingAccount extends AppCompatActivity
+public class DashBoard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting_account);
+        setContentView(R.layout.activity_dash_board);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -56,7 +56,7 @@ public class SettingAccount extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.dash_board, menu);
         return true;
     }
 
@@ -82,26 +82,23 @@ public class SettingAccount extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Home) {
-            Intent h = new Intent(SettingAccount.this,Home.class);
+            Intent h = new Intent(DashBoard.this,DashBoard.class);
             startActivity(h);
         } else if (id == R.id.setting) {
-            Intent s = new Intent(SettingAccount.this ,SettingAccount.class);
+            Intent s = new Intent(DashBoard.this ,SettingAccount.class);
             startActivity(s);
 
-
         } else if (id == R.id.help) {
-            Intent l = new Intent(SettingAccount.this,Help.class);
+            Intent l = new Intent(DashBoard.this,Help.class);
             startActivity(l);
 
         } else if (id == R.id.aboutapp) {
-            Intent a = new Intent(SettingAccount.this,about.class);
+            Intent a = new Intent(DashBoard.this,about.class);
             startActivity(a);
 
 
 
         }
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
