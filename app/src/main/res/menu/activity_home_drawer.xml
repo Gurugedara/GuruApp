@@ -21,6 +21,10 @@
             android:id="@+id/aboutapp"
             android:icon="@drawable/ic_about"
             android:title="About App" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_person_white_24dp"
+            android:title="Logout" />
 
 
 

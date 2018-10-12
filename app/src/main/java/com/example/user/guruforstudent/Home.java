@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,27 +15,22 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
     NavigationView navigationView;
     Toolbar toolbar = null;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        auth=FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -85,22 +81,22 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Home) {
-            Intent h = new Intent(Home.this,Home.class);
+            Intent h = new Intent(Home.this, Home.class);
             startActivity(h);
         } else if (id == R.id.setting) {
-            Intent s = new Intent(Home.this ,SettingAccount.class);
+            Intent s = new Intent(Home.this, Settings.class);
             startActivity(s);
 
         } else if (id == R.id.help) {
-            Intent l = new Intent(Home.this,Help.class);
+            Intent l = new Intent(Home.this, Help.class);
             startActivity(l);
 
-        } else if (id == R.id.aboutapp) {
+        }else if (id == R.id.logout){
+            auth.signOut();
+            startActivity(new Intent(Home.this,Login.class));
+        }else if (id == R.id.aboutapp) {
             Intent a = new Intent(Home.this,about.class);
             startActivity(a);
-
-
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
